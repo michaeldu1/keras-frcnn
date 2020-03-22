@@ -264,7 +264,8 @@ for epoch_num in range(num_epochs):
 
 				curr_loss = loss_rpn_cls + loss_rpn_regr + loss_class_cls + loss_class_regr
 				with open('results.txt', 'a') as fout:
-					loss = loss_rpn_cls+ " " + loss_rpn_regr+ " " + loss_class_cls+ " " + loss_class_regr+ " " + curr_loss+ " " + str(time.time()-start_time)+ " " + class_acc 
+					loss = str(loss_rpn_cls) + " " + str(loss_rpn_regr) + " " + str(loss_class_cls) + " " + str(loss_class_regr) + " " + str(curr_loss) + " " + str(time.time()-start_time)+ " " + str(class_acc)
+					print("loss is ", loss)
 					fout.write(loss +'\n')
 
 				iter_num = 0

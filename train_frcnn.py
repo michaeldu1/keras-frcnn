@@ -263,6 +263,10 @@ for epoch_num in range(num_epochs):
 					print('Elapsed time: {}'.format(time.time() - start_time))
 
 				curr_loss = loss_rpn_cls + loss_rpn_regr + loss_class_cls + loss_class_regr
+				with open('results.txt', 'a') as fout:
+					loss = loss_rpn_cls+ " " + loss_rpn_regr+ " " + loss_class_cls+ " " + loss_class_regr+ " " + curr_loss+ " " + str(time.time()-start_time)+ " " + class_acc + " " + mean_overlapping_bboxes 
+            		fout.write(loss +'\n')
+
 				iter_num = 0
 				start_time = time.time()
 
